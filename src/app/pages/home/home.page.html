@@ -21,8 +21,88 @@
 
      </ion-popover>
   </ion-toolbar>
+  <ion-segment [value]="segment" mode="md" (ionChange)="onSegmentChanged($event)">
+    <ion-segment-button value="status">
+        <ion-label>
+          Status
+        </ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button value="chats">
+      <ion-label>
+        Chats
+      </ion-label>
+  </ion-segment-button>
+  <ion-segment-button value="calls">
+    <ion-label>
+      Calls
+    </ion-label>
+</ion-segment-button>
+
+  </ion-segment>
 </ion-header>
 
-<ion-content >
+<ion-content  color="light">
 
+  @if (segment == 'chats') 
+  {
+    <ion-list>
+      <ion-list-header class="ion-padding-bottom" color="light">
+        RECENT CHATS
+      </ion-list-header>
+      <ion-item detail>
+           <ion-avatar slot="start">
+            <img [src]="'https://i.pravatar.cc/385'"/>
+           </ion-avatar>
+           <ion-label>
+              Nikhil
+              <p>
+                <ion-text>
+                  Message
+                </ion-text>
+              </p>
+           </ion-label>
+           <ion-text slot="end" color="medium">10:00AM</ion-text>
+      </ion-item>
+
+      <ion-item detail>
+        <ion-avatar slot="start">
+         <img [src]="'https://i.pravatar.cc/385'"/>
+        </ion-avatar>
+        <ion-label>
+           Nikhil
+           <p>
+             <ion-text>
+               Message
+             </ion-text>
+           </p>
+        </ion-label>
+        <ion-text slot="end" color="medium">10:00AM</ion-text>
+   </ion-item>
+   <ion-item detail>
+    <ion-avatar slot="start">
+     <img [src]="'https://i.pravatar.cc/385'"/>
+    </ion-avatar>
+    <ion-label>
+       Nikhil
+       <p>
+         <ion-text>
+           Message
+         </ion-text>
+       </p>
+    </ion-label>
+    <ion-text slot="end" color="medium">10:00AM</ion-text>
+</ion-item>
+    </ion-list>
+  }
+
+  <ion-fab slot="fixed" horizontal="end" vertical="bottom">
+    <ion-fab-button (click)="newChat()">
+
+      <ion-icon name="add"></ion-icon>
+
+    </ion-fab-button>
+  </ion-fab>
+
+   
 </ion-content>
