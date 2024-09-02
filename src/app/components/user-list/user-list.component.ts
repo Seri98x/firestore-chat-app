@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { IonItem, IonAvatar, IonLabel } from '@ionic/angular/standalone';
+
 @Component({
   selector: 'app-user-list',
   standalone: true,
@@ -16,6 +17,7 @@ redirect() {
 
   constructor() 
   {
+ 
     console.log(this.item);
    }
 
